@@ -4,7 +4,9 @@
   
   <body> 
     
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="400" viewBox="0 0 500 400" version="2">
+<svg xmlns="http://www.w3.org/2000/svg" version="2"
+	width="500" height="400"
+	shape-rendering="crispEdges">
 
 
 	<desc>Example script01 - invoke an ECMAScript function from an onclick event
@@ -13,141 +15,519 @@
 	<!-- UI Definitions -->
 	<defs>
 
+		<clipPath id="hero-clip"> <rect x="0" y="0" width="32" height="32" /> </clipPath>
+
+		<symbol id="hero-stand" data-asset="sprite" data-clip="hero-clip" data-frames="9">
+			<path stroke="#000000" d="M75 4h10M42 5h12M74 5h2M85 5h1M106 5h12M9 6h14M41 6h2M54 6h1M73 6h1M86 6h1M105 6h2M118 6h1M137 6h14M8 7h2M22 7h2M40 7h1M55 7h1M72 7h1M87 7h1M104 7h1M119 7h1M136 7h2M150 7h2M168 7h16M264 7h16M7 8h1M24 8h1M39 8h1M56 8h1M72 8h1M87 8h1M103 8h1M120 8h1M135 8h1M152 8h1M167 8h2M183 8h2M200 8h16M232 8h16M263 8h2M279 8h2M6 9h1M25 9h1M39 9h1M56 9h1M72 9h1M80 9h1M83 9h1M87 9h1M103 9h1M120 9h1M134 9h1M153 9h1M166 9h1M185 9h1M198 9h3M215 9h3M230 9h3M247 9h3M262 9h1M281 9h1M6 10h1M25 10h1M39 10h1M56 10h1M72 10h1M80 10h1M83 10h1M87 10h1M103 10h1M120 10h1M134 10h1M153 10h1M165 10h1M186 10h1M197 10h2M217 10h2M229 10h2M249 10h2M261 10h1M282 10h1M6 11h1M25 11h1M39 11h1M48 11h1M51 11h1M56 11h1M72 11h1M80 11h1M83 11h1M87 11h1M103 11h1M112 11h1M115 11h1M120 11h1M134 11h1M153 11h1M165 11h1M186 11h1M197 11h1M218 11h1M229 11h1M250 11h1M261 11h1M282 11h1M6 12h1M15 12h1M19 12h1M25 12h1M39 12h1M48 12h1M51 12h1M56 12h1M72 12h1M80 12h1M83 12h1M87 12h1M103 12h1M112 12h1M115 12h1M120 12h1M134 12h1M143 12h1M147 12h1M153 12h1M165 12h1M186 12h1M196 12h1M218 12h2M228 12h1M250 12h2M261 12h1M282 12h1M6 13h1M15 13h1M19 13h1M25 13h1M39 13h1M48 13h1M51 13h1M56 13h1M72 13h1M80 13h1M83 13h1M87 13h1M103 13h1M112 13h1M115 13h1M120 13h1M134 13h1M143 13h1M147 13h1M153 13h1M165 13h1M175 13h1M180 13h1M186 13h1M196 13h1M219 13h1M228 13h1M251 13h1M261 13h1M271 13h1M276 13h1M282 13h1M6 14h1M15 14h1M19 14h1M25 14h1M39 14h1M48 14h1M51 14h1M56 14h1M72 14h1M80 14h1M83 14h1M87 14h1M103 14h1M112 14h1M115 14h1M120 14h1M134 14h1M143 14h1M147 14h1M153 14h1M165 14h1M175 14h1M180 14h1M186 14h1M196 14h1M207 14h1M212 14h1M219 14h1M228 14h1M239 14h1M244 14h1M251 14h1M261 14h1M271 14h1M276 14h1M282 14h1M6 15h1M15 15h1M19 15h1M25 15h1M39 15h1M48 15h1M51 15h1M56 15h1M72 15h1M87 15h1M103 15h1M112 15h1M115 15h1M120 15h1M134 15h1M143 15h1M147 15h1M153 15h1M165 15h1M175 15h1M180 15h1M186 15h1M196 15h1M206 15h3M211 15h3M219 15h1M228 15h1M238 15h3M243 15h3M251 15h1M261 15h1M271 15h1M276 15h1M282 15h1M6 16h1M15 16h1M19 16h1M25 16h1M39 16h1M56 16h1M72 16h1M87 16h1M103 16h1M120 16h1M134 16h1M143 16h1M147 16h1M153 16h1M165 16h1M175 16h1M180 16h1M186 16h1M196 16h1M207 16h1M212 16h1M219 16h1M228 16h1M239 16h1M244 16h1M251 16h1M261 16h1M271 16h1M276 16h1M282 16h1M6 17h1M25 17h1M39 17h1M56 17h1M72 17h1M87 17h1M103 17h1M120 17h1M134 17h1M153 17h1M165 17h1M175 17h1M180 17h1M186 17h1M196 17h1M219 17h1M228 17h1M251 17h1M261 17h1M271 17h1M276 17h1M282 17h1M6 18h1M25 18h1M39 18h1M56 18h1M72 18h1M87 18h1M103 18h1M120 18h1M134 18h1M153 18h1M165 18h1M186 18h1M196 18h1M219 18h1M228 18h1M251 18h1M261 18h1M282 18h1M6 19h1M25 19h1M39 19h1M56 19h1M72 19h1M87 19h1M103 19h1M120 19h1M134 19h1M153 19h1M165 19h1M186 19h1M196 19h1M219 19h1M228 19h1M251 19h1M261 19h1M282 19h1M6 20h1M25 20h1M39 20h1M56 20h1M72 20h1M87 20h1M103 20h1M120 20h1M134 20h1M153 20h1M165 20h1M186 20h1M196 20h1M219 20h1M228 20h1M251 20h1M261 20h1M282 20h1M6 21h1M25 21h1M39 21h1M56 21h1M72 21h1M87 21h1M103 21h1M120 21h1M134 21h1M153 21h1M165 21h1M186 21h1M196 21h2M200 21h1M204 21h2M209 21h1M214 21h1M218 21h2M228 21h2M232 21h1M236 21h2M241 21h1M246 21h1M250 21h2M261 21h1M282 21h1M6 22h1M25 22h1M39 22h1M56 22h1M72 22h1M87 22h1M103 22h1M120 22h1M134 22h1M153 22h1M165 22h1M168 22h1M172 22h2M177 22h1M182 22h1M186 22h1M197 22h1M199 22h1M201 22h3M205 22h4M210 22h4M215 22h2M218 22h1M229 22h1M231 22h1M233 22h3M237 22h4M242 22h4M247 22h2M250 22h1M261 22h1M264 22h1M268 22h2M273 22h1M278 22h1M282 22h1M6 23h1M9 23h1M12 23h1M16 23h1M21 23h1M25 23h1M39 23h1M56 23h1M72 23h1M87 23h1M103 23h1M120 23h1M134 23h1M137 23h1M140 23h1M144 23h1M149 23h1M153 23h1M165 23h1M167 23h1M169 23h3M173 23h4M178 23h4M183 23h2M186 23h1M197 23h2M202 23h1M207 23h1M211 23h1M216 23h3M229 23h2M234 23h1M239 23h1M243 23h1M248 23h3M261 23h1M263 23h1M265 23h3M269 23h4M274 23h4M279 23h2M282 23h1M6 24h1M8 24h1M10 24h6M17 24h4M22 24h2M25 24h1M39 24h1M42 24h1M45 24h1M48 24h1M53 24h1M56 24h1M72 24h1M87 24h1M103 24h1M106 24h1M109 24h1M112 24h1M117 24h1M120 24h1M134 24h1M136 24h1M138 24h6M145 24h4M150 24h2M153 24h1M165 24h2M170 24h1M175 24h1M179 24h1M184 24h3M261 24h2M266 24h1M271 24h1M275 24h1M280 24h3M6 25h2M11 25h1M14 25h1M18 25h1M23 25h3M39 25h1M41 25h1M43 25h5M49 25h4M54 25h1M56 25h1M72 25h1M75 25h1M80 25h1M87 25h1M103 25h1M105 25h1M107 25h5M113 25h4M118 25h1M120 25h1M134 25h2M139 25h1M142 25h1M146 25h1M151 25h3M39 26h2M44 26h1M46 26h1M50 26h1M54 26h3M72 26h1M74 26h1M76 26h4M81 26h5M87 26h1M103 26h2M108 26h1M110 26h1M114 26h1M118 26h3M72 27h2M77 27h2M82 27h1M85 27h3" />
+			<path stroke="#766afe" d="M76 5h9M43 6h11M74 6h12M107 6h11M10 7h12M41 7h14M73 7h4M85 7h2M105 7h14M138 7h12M8 8h16M40 8h4M54 8h2M73 8h3M86 8h1M104 8h4M118 8h2M136 8h16M169 8h14M265 8h14M7 9h4M22 9h3M40 9h3M55 9h1M73 9h3M79 9h1M82 9h1M86 9h1M104 9h3M119 9h1M135 9h4M150 9h3M167 9h18M201 9h14M233 9h14M263 9h18M7 10h3M24 10h1M40 10h3M55 10h1M73 10h3M79 10h1M82 10h1M104 10h3M119 10h1M135 10h3M152 10h1M166 10h4M183 10h3M199 10h18M231 10h18M262 10h4M279 10h3M7 11h3M24 11h1M40 11h3M47 11h1M50 11h1M73 11h3M79 11h1M82 11h1M104 11h3M111 11h1M114 11h1M135 11h3M152 11h1M166 11h3M185 11h1M198 11h4M215 11h3M230 11h4M247 11h3M262 11h3M281 11h1M7 12h3M14 12h1M18 12h1M40 12h3M47 12h1M50 12h1M73 12h2M79 12h1M82 12h1M104 12h3M111 12h1M114 12h1M135 12h3M142 12h1M146 12h1M166 12h3M185 12h1M197 12h4M217 12h1M229 12h4M249 12h1M262 12h3M281 12h1M7 13h3M14 13h1M18 13h1M40 13h2M47 13h1M50 13h1M73 13h2M79 13h1M82 13h1M104 13h2M111 13h1M114 13h1M135 13h3M142 13h1M146 13h1M166 13h3M174 13h1M179 13h1M197 13h3M217 13h2M229 13h3M249 13h2M262 13h3M270 13h1M275 13h1M7 14h2M14 14h1M18 14h1M40 14h2M47 14h1M50 14h1M73 14h2M79 14h1M82 14h1M104 14h2M111 14h1M114 14h1M135 14h2M142 14h1M146 14h1M166 14h3M174 14h1M179 14h1M197 14h3M206 14h1M211 14h1M218 14h1M229 14h3M238 14h1M243 14h1M250 14h1M262 14h3M270 14h1M275 14h1M7 15h2M14 15h1M18 15h1M40 15h2M47 15h1M50 15h1M73 15h2M104 15h2M111 15h1M114 15h1M135 15h2M142 15h1M146 15h1M166 15h2M174 15h1M179 15h1M197 15h3M229 15h3M262 15h2M270 15h1M275 15h1M7 16h2M14 16h1M18 16h1M40 16h2M73 16h2M104 16h2M135 16h2M142 16h1M146 16h1M166 16h2M174 16h1M179 16h1M197 16h2M206 16h1M211 16h1M229 16h2M238 16h1M243 16h1M262 16h2M270 16h1M275 16h1M7 17h2M40 17h2M73 17h2M104 17h2M135 17h2M166 17h2M174 17h1M179 17h1M197 17h2M229 17h2M262 17h2M270 17h1M275 17h1M7 18h2M40 18h2M73 18h2M104 18h2M135 18h2M166 18h2M197 18h2M229 18h2M262 18h2M7 19h2M40 19h2M73 19h2M104 19h2M135 19h2M166 19h2M197 19h2M229 19h2M262 19h2M7 20h2M40 20h2M73 20h2M104 20h2M135 20h2M166 20h2M197 20h2M200 20h1M204 20h2M209 20h1M214 20h1M229 20h2M232 20h1M236 20h2M241 20h1M246 20h1M262 20h2M7 21h2M40 21h2M73 21h2M104 21h2M135 21h2M166 21h3M172 21h2M177 21h1M182 21h1M198 21h2M201 21h3M206 21h3M210 21h4M215 21h1M230 21h2M233 21h3M238 21h3M242 21h4M247 21h1M262 21h3M268 21h2M273 21h1M278 21h1M7 22h3M12 22h1M16 22h1M21 22h1M40 22h2M73 22h2M104 22h2M135 22h3M140 22h1M144 22h1M149 22h1M166 22h2M169 22h3M174 22h3M178 22h4M183 22h1M198 22h1M230 22h1M262 22h2M265 22h3M270 22h3M274 22h4M279 22h1M7 23h2M10 23h2M13 23h3M17 23h4M22 23h1M40 23h3M45 23h1M48 23h1M53 23h1M73 23h2M104 23h3M109 23h1M112 23h1M117 23h1M135 23h2M138 23h2M141 23h3M145 23h4M150 23h1M166 23h1M262 23h1M7 24h1M40 24h2M43 24h2M46 24h2M49 24h4M73 24h3M80 24h1M104 24h2M107 24h2M110 24h2M113 24h4M135 24h1M40 25h1M73 25h2M76 25h4M81 25h4M104 25h1M73 26h1" />
+			<path stroke="#9089e2" d="M77 7h8M44 8h10M76 8h10M108 8h10M11 9h11M43 9h12M76 9h3M81 9h1M84 9h2M107 9h12M139 9h11M10 10h14M43 10h12M76 10h3M81 10h1M84 10h3M107 10h12M138 10h14M170 10h13M266 10h13M10 11h14M43 11h4M49 11h1M52 11h4M76 11h3M81 11h1M84 11h3M107 11h4M113 11h1M116 11h4M138 11h14M169 11h16M202 11h13M234 11h13M265 11h16M10 12h4M16 12h2M20 12h5M43 12h4M49 12h1M52 12h4M75 12h4M81 12h1M84 12h3M107 12h4M113 12h1M116 12h4M138 12h4M144 12h2M148 12h5M169 12h16M201 12h16M233 12h16M265 12h16M10 13h4M16 13h2M20 13h5M42 13h5M49 13h1M52 13h4M75 13h4M81 13h1M84 13h3M106 13h5M113 13h1M116 13h4M138 13h4M144 13h2M148 13h5M169 13h5M176 13h3M181 13h5M200 13h17M232 13h17M265 13h5M272 13h3M277 13h5M9 14h5M16 14h2M20 14h5M42 14h5M49 14h1M52 14h4M75 14h4M81 14h1M84 14h3M106 14h5M113 14h1M116 14h4M137 14h5M144 14h2M148 14h5M169 14h5M176 14h3M181 14h5M200 14h6M208 14h3M213 14h5M232 14h6M240 14h3M245 14h5M265 14h5M272 14h3M277 14h5M9 15h5M16 15h2M20 15h5M42 15h5M49 15h1M52 15h4M75 15h12M106 15h5M113 15h1M116 15h4M137 15h5M144 15h2M148 15h5M168 15h6M176 15h3M181 15h5M200 15h6M209 15h2M214 15h5M232 15h6M241 15h2M246 15h5M264 15h6M272 15h3M277 15h5M9 16h5M16 16h2M20 16h5M42 16h14M75 16h12M106 16h14M137 16h5M144 16h2M148 16h5M168 16h6M176 16h3M181 16h5M199 16h7M208 16h3M213 16h6M231 16h7M240 16h3M245 16h6M264 16h6M272 16h3M277 16h5M9 17h16M42 17h14M75 17h12M106 17h14M137 17h16M168 17h6M176 17h3M181 17h5M199 17h20M231 17h20M264 17h6M272 17h3M277 17h5M9 18h16M42 18h14M75 18h12M106 18h14M137 18h16M168 18h18M199 18h20M231 18h20M264 18h18M9 19h16M42 19h14M75 19h12M106 19h14M137 19h16M168 19h18M199 19h20M231 19h20M264 19h18M9 20h16M42 20h14M75 20h12M106 20h14M137 20h16M168 20h18M199 20h1M201 20h3M206 20h3M210 20h4M215 20h4M231 20h1M233 20h3M238 20h3M242 20h4M247 20h4M264 20h18M9 21h16M42 21h14M75 21h12M106 21h14M137 21h16M169 21h3M174 21h3M178 21h4M183 21h3M216 21h2M248 21h2M265 21h3M270 21h3M274 21h4M279 21h3M10 22h2M13 22h3M17 22h4M22 22h3M42 22h14M75 22h12M106 22h14M138 22h2M141 22h3M145 22h4M150 22h3M184 22h2M217 22h1M249 22h1M280 22h2M23 23h2M43 23h2M46 23h2M49 23h4M54 23h2M75 23h12M107 23h2M110 23h2M113 23h4M118 23h2M151 23h2M185 23h1M281 23h1M24 24h1M54 24h2M76 24h4M81 24h6M118 24h2M152 24h1M55 25h1M85 25h2M119 25h1M86 26h1" />
+		</symbol>
+		
+		<symbol id="hero-shift" data-asset="sprite" data-clip="hero-clip" data-frames="4">
+			<path stroke="#000000" d="M10 6h12M42 6h12M74 6h12M106 6h12M8 7h2M22 7h2M40 7h2M54 7h2M72 7h2M86 7h2M104 7h2M118 7h2M7 8h1M24 8h1M39 8h1M56 8h1M71 8h1M88 8h1M103 8h1M120 8h1M6 9h1M25 9h1M38 9h1M57 9h1M70 9h1M89 9h1M102 9h1M121 9h1M6 10h1M25 10h1M38 10h1M57 10h1M70 10h1M89 10h1M102 10h1M121 10h1M6 11h1M25 11h1M38 11h1M57 11h1M70 11h1M89 11h1M102 11h1M121 11h1M6 12h1M15 12h1M20 12h1M25 12h1M38 12h1M57 12h1M70 12h1M89 12h1M102 12h1M121 12h1M6 13h1M15 13h1M20 13h1M25 13h1M38 13h1M47 13h1M52 13h1M57 13h1M70 13h1M89 13h1M102 13h1M111 13h1M116 13h1M121 13h1M6 14h1M15 14h1M20 14h1M25 14h1M38 14h1M47 14h1M52 14h1M57 14h1M70 14h1M79 14h1M84 14h1M89 14h1M102 14h1M111 14h1M116 14h1M121 14h1M6 15h1M15 15h1M20 15h1M25 15h1M38 15h1M47 15h1M52 15h1M57 15h1M70 15h1M79 15h1M84 15h1M89 15h1M102 15h1M111 15h1M116 15h1M121 15h1M6 16h1M15 16h1M20 16h1M25 16h1M38 16h1M47 16h1M52 16h1M57 16h1M70 16h1M79 16h1M84 16h1M89 16h1M102 16h1M111 16h1M116 16h1M121 16h1M6 17h1M25 17h1M38 17h1M47 17h1M52 17h1M57 17h1M70 17h1M79 17h1M84 17h1M89 17h1M102 17h1M111 17h1M116 17h1M121 17h1M6 18h1M25 18h1M38 18h1M57 18h1M70 18h1M89 18h1M102 18h1M121 18h1M6 19h1M25 19h1M38 19h1M57 19h1M70 19h1M89 19h1M102 19h1M121 19h1M6 20h1M25 20h1M38 20h1M57 20h1M70 20h1M89 20h1M102 20h1M121 20h1M6 21h1M25 21h1M38 21h1M57 21h1M70 21h1M89 21h1M102 21h1M121 21h1M6 22h1M25 22h1M38 22h1M57 22h1M70 22h1M89 22h1M102 22h1M121 22h1M6 23h1M9 23h1M12 23h1M16 23h1M21 23h1M25 23h1M38 23h1M40 23h1M43 23h1M47 23h1M52 23h1M57 23h1M70 23h1M74 23h1M78 23h1M83 23h1M89 23h1M102 23h1M104 23h1M108 23h1M113 23h1M118 23h1M121 23h1M6 24h1M8 24h1M10 24h6M17 24h4M22 24h2M25 24h1M38 24h2M41 24h6M48 24h4M53 24h2M56 24h2M70 24h1M72 24h6M79 24h4M84 24h2M87 24h3M102 24h6M109 24h4M114 24h2M117 24h5M6 25h2M11 25h1M14 25h1M18 25h1M23 25h3M38 25h1M42 25h1M45 25h1M49 25h1M54 25h2M70 25h2M73 25h1M76 25h1M80 25h1M85 25h2M88 25h2M102 25h2M106 25h1M110 25h1M115 25h2M118 25h1M120 25h2" />
+			<path stroke="#766afe" d="M10 7h12M42 7h12M74 7h12M106 7h12M8 8h16M40 8h16M72 8h16M104 8h16M7 9h4M22 9h3M39 9h4M54 9h3M71 9h4M86 9h3M103 9h4M118 9h3M7 10h3M24 10h1M39 10h3M56 10h1M71 10h3M88 10h1M103 10h3M120 10h1M7 11h3M24 11h1M39 11h3M56 11h1M71 11h3M88 11h1M103 11h3M120 11h1M7 12h3M14 12h1M19 12h1M39 12h3M71 12h3M103 12h3M7 13h3M14 13h1M16 13h1M19 13h1M21 13h1M39 13h3M46 13h1M51 13h1M71 13h3M103 13h3M110 13h1M115 13h1M7 14h2M14 14h1M16 14h1M19 14h1M21 14h1M39 14h2M46 14h1M48 14h1M51 14h1M53 14h1M71 14h2M78 14h1M83 14h1M103 14h2M110 14h1M112 14h1M115 14h1M117 14h1M7 15h2M14 15h1M16 15h1M19 15h1M21 15h1M39 15h2M46 15h1M48 15h1M51 15h1M53 15h1M71 15h2M78 15h1M80 15h1M83 15h1M85 15h1M103 15h2M110 15h1M112 15h1M115 15h1M117 15h1M7 16h2M14 16h1M19 16h1M39 16h2M46 16h1M48 16h1M51 16h1M53 16h1M71 16h2M78 16h1M80 16h1M83 16h1M85 16h1M103 16h2M110 16h1M112 16h1M115 16h1M117 16h1M7 17h2M39 17h2M46 17h1M51 17h1M71 17h2M78 17h1M83 17h1M103 17h2M110 17h1M115 17h1M7 18h2M39 18h2M71 18h2M103 18h2M7 19h2M39 19h2M71 19h2M103 19h2M7 20h2M39 20h2M71 20h2M103 20h2M7 21h3M12 21h1M16 21h1M21 21h1M39 21h2M43 21h1M47 21h1M52 21h1M71 21h2M74 21h1M78 21h1M83 21h1M103 21h2M108 21h1M113 21h1M118 21h1M7 22h7M15 22h3M20 22h3M39 22h6M46 22h3M51 22h3M71 22h5M77 22h3M82 22h3M103 22h2M107 22h3M112 22h3M117 22h3M7 23h2M10 23h2M13 23h3M17 23h4M22 23h2M39 23h1M41 23h2M44 23h3M48 23h4M53 23h2M71 23h3M75 23h3M79 23h4M84 23h2M87 23h1M103 23h1M105 23h3M109 23h4M114 23h4M119 23h1M7 24h1M55 24h1M71 24h1M86 24h1M116 24h1" />
+			<path stroke="#9089e2" d="M11 9h11M43 9h11M75 9h11M107 9h11M10 10h14M42 10h14M74 10h14M106 10h14M10 11h14M42 11h14M74 11h14M106 11h14M10 12h4M16 12h3M21 12h4M42 12h15M74 12h15M106 12h15M10 13h4M17 13h2M22 13h3M42 13h4M48 13h3M53 13h4M74 13h15M106 13h4M112 13h3M117 13h4M9 14h5M17 14h2M22 14h3M41 14h5M49 14h2M54 14h3M73 14h5M80 14h3M85 14h4M105 14h5M113 14h2M118 14h3M9 15h5M17 15h2M22 15h3M41 15h5M49 15h2M54 15h3M73 15h5M81 15h2M86 15h3M105 15h5M113 15h2M118 15h3M9 16h5M16 16h3M21 16h4M41 16h5M49 16h2M54 16h3M73 16h5M81 16h2M86 16h3M105 16h5M113 16h2M118 16h3M9 17h16M41 17h5M48 17h3M53 17h4M73 17h5M80 17h3M85 17h4M105 17h5M112 17h3M117 17h4M9 18h16M41 18h16M73 18h16M105 18h16M9 19h16M41 19h16M73 19h16M105 19h16M9 20h16M41 20h16M73 20h16M105 20h16M10 21h2M13 21h3M17 21h4M22 21h3M41 21h2M44 21h3M48 21h4M53 21h4M73 21h1M75 21h3M79 21h4M84 21h5M105 21h3M109 21h4M114 21h4M119 21h2M14 22h1M18 22h2M23 22h2M45 22h1M49 22h2M54 22h3M76 22h1M80 22h2M85 22h4M105 22h2M110 22h2M115 22h2M120 22h1M24 23h1M55 23h2M86 23h1M88 23h1M120 23h1M24 24h1" />
+		</symbol>
+
+		<path id="scene-mnt1"  d="M-20,300 -20,110 50,100 150,110 200,80 300,150 400,70 520,110 520,300z" />
+		<path id="scene-mnt2"  d="M-20,300 -20,200 50,180 150,220 200,200 300,150 400,240 520,200 520,300z" />
+		<path id="scene-flr1"  d="M20,350 50,350z M70,320 100,320z M200,380 140,380z M350,350 370,350z M420,325 450,325z" />
 	</defs>
 
 
-  	<g id="console">
+  	<g id="bit-console">
   	
-	  	<g id="scene">
-			<circle id="ship" cx="200" cy="200" r="10" fill="blue"/>
+	  	<g id="bit-scene">
+	  		<rect ID="bg" width="100%" height="100%" fill="#000"/>		
+
+			<g fill="#614DFD">
+		  		<use href="#scene-mnt1">
+		  			<animate attributeName="x" values="0;-540" dur="35s" repeatCount="indefinite" />
+		  		</use>
+
+				<use href="#scene-mnt1">
+		  			<animate attributeName="x" values="540;0" dur="35s" repeatCount="indefinite" />
+		  		</use>
+	  		</g>
+			
+			<g fill="#333">
+		  		<use href="#scene-mnt2">
+		  			<animate attributeName="x" values="0;-540" dur="20s" repeatCount="indefinite" />
+		  		</use>
+
+				<use href="#scene-mnt2">
+		  			<animate attributeName="x" values="540;0" dur="20s" repeatCount="indefinite" />
+		  		</use>
+	  		</g>
+
+			<rect id="ground" x="0" y="300" width="100%" height="200" fill="#aaa"/>
+
+			<g stroke="black">
+		  		<use href="#scene-flr1">
+		  			<animate attributeName="x" values="0;-540" dur="10s" repeatCount="indefinite" />
+		  		</use>
+
+				<use href="#scene-flr1">
+		  			<animate attributeName="x" values="540;0" dur="10s" repeatCount="indefinite" />
+		  		</use>
+	  		</g>			
+			
+			<use id="hero-1" href="#hero-stand-f0" x="30" y="280"/>
+
 		</g>
+
 
 		<g id="hud">
+			<rect id="focus" x="90%" y="90%" width="20" height="20"
+			 fill="none" stroke="white"/>
 		</g>
 
-		<rect id="inputCard" tabindex="0" x="0" y="0" width="100%" height="100%" fill="blue" opacity="0.1"/>
 
-	</g>&gt;
+		<rect id="input-card" tabindex="0" x="0" y="0" width="100%" height="100%"
+			style="opacity:0; outline:none;"/>
+
+	</g>
 
 	<!-- ECMAScript to change the radius with each click -->
-	<script id="bit-console-xyz"> //<![CDATA[
-		console.log("starting firmware");
+	<script id="bit-console-xyz"><![CDATA[
 
-		var bitConsole = {
+var ns = "http://www.w3.org/2000/svg";
 
-			cartridge: null,
+function Block(elem, attrs) {
+	return new SvgBlock(elem, attrs);
+}
 
-			screen: {
-				width: 500,
-				height: 400,
-			},
+class SvgBlock {
 
-			gamepad : {
-
-			},
-
-			loadGame: function(cartridge){
-				if (!cartridge) 
-					return;
-				this.cartridge = cartridge;
-				
-				this.cartridge.initialize(this);
-				return cartridge;
-			},
-
-			wrap: function(objId) {
-				return document.getElementById(objId);
-			}
+	constructor(elem, attrs) {
+		if(typeof elem == 'object'){
+			this.e = elem;
+		} else if(elem.startsWith("#")) {
+			this.id = elem.slice(1);;
+			this.e = document.getElementById(this.id);;
+		} else {
+			this.e = document.createElementNS(ns,elem);
 		}
 
+		this.data = this.e.dataset;
+		this.cache = {};
+		this.attr(attrs);
+	}
 
-		var intervalID = setInterval(myCallback, 33, 'Parameter 1', 'Parameter 2');
+	add(block, attrs){
+		if (block instanceof SvgBlock)
+			block.addTo(this);
+		else 
+			Block(block, attrs).addTo(this);
+		return this;
+	}
 
-		function myCallback(a, b)
-		{
-			if (!this.cartridge) 
-				return;
+	addTo(block){
+		if (block instanceof SvgBlock)
+			block = block.e
+		block.appendChild(this.e);
+		return this;
+	}
 
-			dx = 0; dy = 0;
-			if (pressedKey[37] == 1) dx = -1;
-			if (pressedKey[39] == 1) dx = 1;    	    	
-			if (pressedKey[38] == 1) dy = -1;
-			if (pressedKey[40] == 1) dy = 1;
-			
-			this.cartridge.move(dx, dy);
-		}
-
-		pressedKey = {}
-
-		function screen_click(evt) {
-			console.log("Engine reactive");
-			var t = document.getElementById("ship");
-		  	var currentRadius = t.getAttribute("r");
-			if (currentRadius == 10)
-				t.setAttribute("r", currentRadius*2);
-			else
-				t.setAttribute("r", currentRadius*0.5);
-		}
-
-		function input_keyup(e) {
-			pressedKey[e.keyCode] = 0;
-		}
-
-		function input_keydown(e) {
-			pressedKey[e.keyCode] = 1;
-		}
-
-		var inputCard = document.getElementById("inputCard");
-		inputCard.addEventListener("keydown", input_keydown)
-		inputCard.addEventListener("keyup", input_keyup)
-		inputCard.addEventListener("click", screen_click)
-
-		console.log("firmware online");
-	//]]> </script>
-
-	<script id="bit-game-xyz"> //<![CDATA[
-
+	attr(attr, val) {
+		if (attr == null)
+			return this; 
 		
-		var cartridge = {
-			
-			btc: null,
+		if(val != null) {
+			this.cache[attr] = val;
+			this.e.setAttributeNS(null, attr, val);
+		} else if (typeof attr === "object" && attr.constructor === Object) {
+			for (const val in attr)
+			  	this.attr(val, attr[val]);
+		} else {
+			this.e.removeAttribute(attr);
+		}
+		
+		return this;
+	}	
 
-			ship: null,
+	iGet(a){
+		var v = this.cache[a];
+		if (v == null)
+			v = parseInt(this.e.getAttribute(a));
+		return v;
+	}
 
-			initialize: function (bitConsole) {
-				this.btc = bitConsole;
-				this.ship = this.btc.wrap("ship");
-			},
+	aGet(a){
+		var v = this.cache[a];
+		if (v == null)
+			v = this.e.getAttributeNS(null, a);
+		return v;
+	}
 
-			move: function (dx, dy) {
-				step = 5;
+	react(hnds){ 
+		for (const hName in hnds) {
+		  	this.e.addEventListener(hName, hnds[hName]);
+		}
+		return this;
+	}
 
-				s = this.ship;
-				if (dx != 0) {
-			    	var x = parseInt(s.getAttribute("cx"));
-				    s.setAttribute("cx", (x + dx*step));
-			    }
-			    if (dy != 0) {
-				    var y = parseInt(s.getAttribute("cy"));
-				    s.setAttribute("cy", (y + dy*step));
-			    }		
-			},
+}
 
-			act: function(a, b) {
+class ArtBlock extends SvgBlock {
+	static seed = 0;
+	constructor(eId) {
+		super(eId); 
+		this.assetId = eId.slice(1,eId.lastIndexOf("-"));
+		this.gestures = { };
+		this.currGest = null;
+	}
 
-			},
-
-			scene: function() {
-
+	regGestures	(gestures){
+		for(const gId in gestures){
+			var g = gestures[gId];
+			this.gestures[gId] = g;
+			if(g.aGet("repeatCount") != 'indefinite'){
+				g.react({"endEvent": e => this.cancelGesture()});
 			}
 		}
+		return this;
+	}
+
+	currentGesture() { 
+		return this.gestures[this.currGest] || null; 
+	}
+
+	cancelGesture() {
+		if (this.currGest){
+			this.e.removeChild(this.gestures[this.currGest].e);
+			this.currGest = null;
+		}
+		return this;
+	}
+
+	animate(gestId){
+		if (!gestId)
+			return;
+
+		this.cancelGesture();
+		var g = this.gestures[gestId].addTo(this);
+		if (g.aGet("repeatCount") != 'indefinite') {
+			g.e.beginElement();
+		}
+		this.currGest = gestId;
+		return this;
+	}
+
+}
+
+class Anim {
+
+	static sprite(spriteId, duration, frameC, animAttrs) {
+		var frames = ""
+		for(var f=0; f<frameC; f++){
+			frames += `#${spriteId}-f${f};`;
+		}
+		
+		var anim = Block("animate", { 
+			attributeName:"href",
+			dur: `${duration}ms`,
+			repeatCount: "indefinite",
+			values: frames
+		});			
+
+		return anim.attr(animAttrs);
+	}
+
+	static move(aName, duration, valSeq, animAttrs){
+
+		var anim = Block("animate", { 
+			attributeName: aName, 
+			dur: `${duration}ms`, 
+			repeatCount: "1",
+			additive: "sum",
+			values: valSeq
+		});
+	
+		return anim.attr(animAttrs);
+	}
+}
 
 
-		bitConsole.loadGame(cartridge);
+class BitScene {
+
+	constructor(scene){
+		this.defs = Block(document.getElementsByTagNameNS(ns,"defs")[0]);
+		this.bScene = scene;
+		this.elems = { }
+
+		this.loadAssets()
+	}
+
+	loadAssets() {
+		var childs = this.defs.e.children;
+		for (var i = 0; i < childs.length; i++) {
+			var b =  Block(childs[i]);
+		    if(b.data.asset == "sprite"){
+		    	this.loadSprite(b);
+		    	i=i-1;
+		    }
+		}
+		
+	}
+
+	loadSprite(block) {
+		var root = block.aGet("id");
+		var g = Block("g", { id: `${root}-sprite` })
+					.add(block).addTo(this.defs);
+
+		for(var j=0;j<block.data.frames;j++){
+			Block("symbol", { id:`${root}-f${j}`, "clip-path": `url(#${block.data.clip})`})
+				.add("use", {href:`#${root}`, x: -j*32})
+				.addTo(g);
+		}
+	}	
+
+	reg(k, eId) {
+		var a = new ArtBlock(eId);
+		a.frameTs = Date.now();
+		return (this.elems[k] = a);
+	}
+
+	evolve(ts){
+		for (const e in this.elems) {
+		  	
+		}
+	}
+	
+}
+
+
+class GamePad {
+
+	constructor(inputCard){
+		this.pressed = {}
+		this.dPad = [0,0,0,0]; // Directions
+		this.bPad = [0, 0]; // Buttons
+
+		this.inputCard = inputCard;
+
+		inputCard.react({
+			"keydown": 	e => this.eKeyPressed(e,1),
+			"keyup": 	e => this.eKeyPressed(e,0),
+			"focusin":  e => this.eFocus(e,1),
+			"focusout": e => this.eFocus(e,0),
+			"click": 	e => null,
+		})
+	}
+
+	fetch() {
+		var p = this.pressed;
+		
+		var d = this.dPad;
+		d[0] = (p[38] || p[73]) ? d[0]+1 : 0;
+		d[1] = (p[39] || p[76]) ? d[1]+1 : 0;
+		d[2] = (p[40] || p[75]) ? d[2]+1 : 0;
+		d[3] = (p[37] || p[74]) ? d[3]+1 : 0;
+
+		var b = this.bPad;
+		b[0] = (p[65] || p[32]) ? b[0]+1 : 0;
+		b[1] = (p[68]) ? b[1]+1 : 0;		
+
+	}
+
+	getMov(analog) {
+		var d = this.dPad;
+		if(analog)
+			return [d[1]?1:d[3]&&-1, d[2]?1:d[0]&&-1];
+		else
+			return [d[1]==1?1:-(d[3]==1), d[2]==1?1:-(d[0]==1)];
+	}
+
+	getAct(analog) {
+		var b = this.bPad;
+		if(analog)
+			return [b[0]&&1, b[1]&&1];
+		else
+			return [b[0]==1, b[1]==1];					
+	}
+
+	eKeyPressed(e, on){
+		this.pressed[e.keyCode] = on;
+		//e.preventDefault();
+	}
+
+	eFocus(e, on) { 
+		var f = document.getElementById("focus");
+		f.setAttribute("fill", on? "white": "none");
+	}				
+
+}
+
+class BitConsole {
+
+	constructor() {
+		this.power = -1; // -1 Off, 0 Pause, 1 On
+		this.fps = 60;
+		this.iHbtID = 0;
+		this.oTime = Date.now();
+		this.cTime = Date.now();
+
+		// Setting up devices
+		this.screen = { w: 500, h: 400 }
+		this.scene = new BitScene(Block("#bit-scene"))
+		this.speaker = null;
+		this.gpad = new GamePad(Block("#input-card"))
+		this.cartridge = null;
+	}
+
+	insertCartridge(c) {
+		if (this.power != -1 || this.cartridge || !c) 
+			return false;
+		
+		return (this.cartridge = c);
+	}
+
+	start(cartridge) {				
+		if (!this.cartridge || this.power==1)
+			return;
+
+		if (this.power == -1) {
+			this.cartridge.initialize(this);
+		}
+
+		this.power = 1;
+
+		var tDelta = Math.floor(1000/this.fps);
+		this.iHbtID = setInterval(function(btc){btc.hbt()}, tDelta, this);
+	}
+
+	pause() {
+		if (this.power<1) 
+			return;
+		
+		this.power = 0;
+		clearInterval(this.iHbtID);
+		this.iHbtID = 0;
+	}
+
+	hbt() {
+		var g = this.gpad; 
+		var c = this.cartridge;
+		if (this.power < 1 || !c) 
+			return;
+		
+		// Read input from GamePad
+		g.fetch();
+		var act = g.getAct(0);
+		var d = g.getMov(1);
+		c.act(d[0], d[1], act[0], act[1]);
+
+		// Perform action on the scene
+		var dTime = this.cTime - this.oTime
+		c.evolve(dTime)
+
+		// Update scene to reflect changes
+		this.scene.evolve(dTime);
+		this.cTime = Date.now();
+	}
+
+}	
+	]]></script>
+
+	<script id="bit-game-xyz"><![CDATA[
+class Storytelling {
+
+
+	constructor() {
+		this.scene = null
+
+	}
+
+	regScene(scene) {
+
+	}
+
+	narrate(ts){
+
+	}
+
+
+}
+
+class GameXYZ {
+	
+	constructor() {
+		this.btc = null;
+		this.story = null;
+	}
+
+	initialize(btc) {
+		this.btc = btc;
+		this.mStep = 240 / this.btc.fps;
+		
+		// Setup Assets
+		this.hero1 = btc.scene.reg("avatar","#hero-1");
+		
+		this.hero1.regGestures({ 
+			"stand": Anim.sprite("hero-stand", 600, 9),
+			"shift": Anim.sprite("hero-shift", 500, 4),
+			 "down": Anim.sprite("hero-shift", 500, 4),
+			 "jump": Anim.move("y", 800, "0;-60;-70;-60;0")
+		}).animate("stand");
+
+		/* Setup Story
+		this.story.regScene({
+			"Lost in the land": {},
+			"Something on the horizon": {},
+			"Changed forever": {},
+			"New world order": {}
+		})*/
+
+	}
+
+	shift_avatar(a, dx, dy){
+		var s = this.btc.screen;
+		var cx =  (a.iGet("x") + dx*this.mStep) % s.w;
+		if(cx < 0) cx = s.w + cx;
+		a.attr("x", cx);
+		var cy = (a.iGet("y") + dy*this.mStep) % s.h;
+		if(cy < 0) cy = s.h + cy;
+		a.attr("y", cy);
+	}
+
+	act(dx, dy, a, b) {
+		var h = this.hero1;
+		var gId = h.currGest;
+
+		if(gId == "jump") null;
+		else if(a || dy < 0) h.animate("jump");
+		else if(dx) h.animate("shift");
+		else if(dy>0) h.animate("down");
+		else h.animate("stand");
+
+		if(dx) {
+			this.shift_avatar(h, dx, 0);
+		}
+
+		if(a) console.log("A");
+		if(b) console.log("B");
+
+	}
+
+	evolve(ts) {
+		//this.story.narrate(ts);
+		
+	}
+
+}		
+	//]]></script>
+
+	<script id="bit-local"> //<![CDATA[
+
+		bitConsole = new BitConsole();
+		bitConsole.insertCartridge(new GameXYZ());
+		bitConsole.start();
 
 	//]]> </script>
 
 </svg>
+
     
   </body>
   
